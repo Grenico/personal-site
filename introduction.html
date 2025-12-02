@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>网页介绍</title>
+  </head>
+  <style>
+    /* * {
+      border: solid 5px rgb(238, 17, 17);
+    } */
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+    .flex {
+      display: flex;
+    }
+    .flex1 {
+      flex: 1;
+    }
+    .column {
+      flex-direction: column;
+    }
+    .bg-color {
+      background-color: #ffffff;
+    }
+    .bg-image {
+      background-image: url("https://i.imgs.ovh/2025/11/30/C5RVvb.jpeg");
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      backdrop-filter: blur(1.5px);
+    }
+    .header {
+      width: 100%;
+      height: 100px;
+    }
+    .bottom {
+      height: 100px;
+    }
+    .zoomin {
+      animation: zoomin ease 1s;
+      animation-iteration-count: 1; /*设置动画播放次数*/
+      animation-fill-mode: forwards; /*设置样式以在动画不播放时应用元素。forward是设置动画结束后，使用元素的结束属性值*/
+    }
+    @keyframes zoomin {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    .taitou {
+      display: inline-flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 120px;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: 黑体;
+      color: #ffffff;
+      transition: background-color 0.3s;
+    }
+    .taitou:hover {
+      background-color: #f0a51a77;
+    }
+    .taitou::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      bottom: 0;
+      transition: 0.3s;
+      width: 0%;
+      background: #ffffff;
+      margin-left: 0;
+      opacity: 0.3;
+      visibility: hidden;
+    }
+    .taitou:hover::after {
+      visibility: visible;
+      width: 100%;
+      opacity: 1;
+    }
+    .pointed {
+      display: inline-flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 120px;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: 黑体;
+      color: #ffffff;
+      background-color: #f0a51a77;
+    }
+    .pointed::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      bottom: 0;
+      width: 100%;
+      background: #ffffff;
+      margin-left: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+    .introduction {
+      height: 50px;
+      width: 140px;
+      background-color: rgb(212, 152, 42);
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      font-weight: bold;
+      font-family: 黑体;
+      color: #ffffff;
+      text-shadow: 1px 2px 10px black;
+      position: relative;
+      left: -1%;
+      border-left: solid 10px rgba(133, 96, 27, 0.329);
+    }
+    .introduction::after {
+      /* triangle */
+      content: "";
+      position: absolute;
+      left: 100%;
+      width: 0;
+      height: 0;
+      border-left: 20px solid rgb(121, 95, 48);
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+    }
+
+    .intro-content {
+      height: 70px;
+      width: 80%;
+      font-size: 18px;
+      padding-top: 30px;
+      padding-left: 70px;
+      line-height: 45px;
+    }
+  </style>
+  <body class="bg-image flex column">
+    <!-- header -->
+    <div
+      class="flex header"
+      style="
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        position: fixed;
+        top: 0;
+        z-index: 1;
+      "
+    >
+      <div class="taitou">首页</div>
+      <div class="taitou">作品一览</div>
+      <div class="pointed">网站介绍</div>
+      <div class="taitou">联系方式</div>
+    </div>
+    <!-- content -->
+    <div
+      class="flex content flex1 column"
+      style="
+        overflow: auto;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 200px;
+      "
+    >
+      <!-- 网站介绍框 -->
+      <div
+        class="zoomin flex column"
+        style="width: 53%; height: fit-content; padding-top: 40px"
+      >
+        <div
+          style="
+            height: 48px;
+            justify-content: flex-start;
+            align-items: flex-end;
+            background-color: rgb(255, 255, 255);
+          "
+          class="flex header"
+        >
+          <p class="flex introduction">网站介绍</p>
+        </div>
+        <div
+          style="
+            height: 300px;
+            background-color: rgb(255, 255, 255);
+            margin-bottom: 20px;
+          "
+          class="flex"
+        >
+          <p class="intro-content">
+            你好：<br />这里是Grencio的个人空间，你可以在这里看到他的几乎所有作品。<br />
+            就这样。希望你玩得开心。
+          </p>
+        </div>
+      </div>
+      <!-- bottom -->
+      <div
+        class="flex bottom"
+        style="
+          flex-shrink: 0;
+          width: 100%;
+          color: white;
+          justify-content: center;
+          align-items: center;
+          background-color: black;
+        "
+      >
+        备案号
+      </div>
+    </div>
+  </body>
+</html>
